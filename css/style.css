@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 .container {
     height: 100vh;
     display: flex;
@@ -54,6 +55,7 @@
     border: 2px solid #ccc;
     opacity: 1;
 }
+
 
 .prev, .next {
     width: 20px;
