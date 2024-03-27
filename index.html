@@ -14,7 +14,7 @@
     <div id="app">
 
         <div class="container">
-            <div class="slider-wrapper" tabindex="0">
+            <div class="slider-wrapper" tabindex="0" @mouseenter="stopautoplay" @mouseleave="startautoplay">
                 <div class="item">
                     <img :src="slides[activeitem].image" alt="Spiderman" />
                     <div class="text" >
@@ -31,8 +31,11 @@
                 <div class="thumbs">
                     <div class="prev" @click="showPrevImg"></div>
                     <div class="next" @click="showNextImg"></div>
-                    <div class="thumb active" >
-                      <img :src="slides[activeitem].image" alt=""  v-for="singlethumb, index in slides">
+                    <div class="thumb" 
+                     v-for="singlethumb, index in slides" 
+                     :class="{'active': index == activeitem}"
+                      @click="activateImage(index)">
+                      <img :src="singlethumb.image" alt=""  >
                     </div>
                 </div>
 
